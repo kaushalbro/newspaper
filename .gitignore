@@ -2,3 +2,6 @@
 /uploads
 /writable
 sitemap.xml
+/old_files
+.env
+
