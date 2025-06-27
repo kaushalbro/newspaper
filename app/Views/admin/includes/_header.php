@@ -168,16 +168,9 @@
                             <a href="<?= adminUrl('ad-spaces'); ?>"><i class="fa fa-dollar" aria-hidden="true"></i><span><?= trans("ad_spaces"); ?></span></a>
                         </li>
                     <?php endif;
-                    if (isSuperAdmin()): ?>
-                        <li class="nav-themes">
-                            <a href="<?= adminUrl('themes'); ?>"><i class="fa fa-leaf"></i><span><?= trans("themes"); ?></span></a>
-                        </li>
-                    <?php endif;
-
-
-                    if (hasPermission('rss_feeds')): ?>
-                        <li class="nav-feeds"><a href="<?= adminUrl('feeds'); ?>"><i class="fa fa-rss" aria-hidden="true"></i><span><?= trans("rss_feeds"); ?></span></a></li>
-                    <?php endif;
+//                    if (hasPermission('rss_feeds')): ?>
+<!--                        <li class="nav-feeds"><a href="--><?php //= adminUrl('feeds'); ?><!--"><i class="fa fa-rss" aria-hidden="true"></i><span>--><?php //= trans("rss_feeds"); ?><!--</span></a></li>-->
+<!--                    --><?php //endif;
 
                     if (hasPermission('widgets')): ?>
                         <li class="nav-widgets"><a href="<?= adminUrl('widgets'); ?>"><i class="fa fa-th" aria-hidden="true"></i><span><?= trans("widgets"); ?></span></a></li>
@@ -214,7 +207,11 @@
                             </ul>
                         </li>
                     <?php endif;
-
+                    if (isSuperAdmin()): ?>
+                        <li class="nav-themes">
+                            <a href="<?= adminUrl('themes'); ?>"><i class="fa fa-leaf"></i><span><?= trans("themes"); ?></span></a>
+                        </li>
+                    <?php endif;
                     if (hasPermission('users')): ?>
                         <li class="nav-users">
                             <a href="<?= adminUrl('users'); ?>"><i class="fa fa-users" aria-hidden="true"></i><span><?= trans("users"); ?></span></a>
@@ -237,9 +234,9 @@
                         <li class="nav-cache-system">
                             <a href="<?= adminUrl('cache-system'); ?>"><i class="fa fa-database"></i><span><?= trans("cache_system"); ?></span></a>
                         </li>
-                        <li class="nav-google-news">
-                            <a href="<?= adminUrl('google-news'); ?>"><i class="fa fa-newspaper-o"></i><span><?= trans("google_news"); ?></span></a>
-                        </li>
+<!--                        <li class="nav-google-news">-->
+<!--                            <a href="--><?php //= adminUrl('google-news'); ?><!--"><i class="fa fa-newspaper-o"></i><span>--><?php //= trans("google_news"); ?><!--</span></a>-->
+<!--                        </li>-->
                     <?php endif;
                     if (hasPermission('settings')): ?>
                         <li class="nav-preferences">
