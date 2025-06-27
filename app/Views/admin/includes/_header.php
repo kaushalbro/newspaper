@@ -227,17 +227,6 @@
                             <a href="<?= adminUrl('seo-tools'); ?>"><i class="fa fa-wrench"></i><span><?= trans("seo_tools"); ?></span></a>
                         </li>
                     <?php endif;
-                    if (isSuperAdmin()): ?>
-                        <li class="nav-storage">
-                            <a href="<?= adminUrl('storage'); ?>"><i class="fa fa-cloud-upload"></i><span><?= trans("storage"); ?></span></a>
-                        </li>
-                        <li class="nav-cache-system">
-                            <a href="<?= adminUrl('cache-system'); ?>"><i class="fa fa-database"></i><span><?= trans("cache_system"); ?></span></a>
-                        </li>
-<!--                        <li class="nav-google-news">-->
-<!--                            <a href="--><?php //= adminUrl('google-news'); ?><!--"><i class="fa fa-newspaper-o"></i><span>--><?php //= trans("google_news"); ?><!--</span></a>-->
-<!--                        </li>-->
-                    <?php endif;
                     if (hasPermission('settings')): ?>
                         <li class="nav-preferences">
                             <a href="<?= adminUrl('preferences'); ?>"><i class="fa fa-check-square-o"></i><span><?= trans("preferences"); ?></span></a>
@@ -265,6 +254,17 @@
                                 </li>
                             </ul>
                         </li>
+                    <?php endif;
+                    if (isSuperAdmin()): ?>
+                        <li class="nav-storage">
+                            <a href="<?= adminUrl('storage'); ?>"><i class="fa fa-cloud-upload"></i><span><?= trans("storage"); ?></span></a>
+                        </li>
+                        <li class="nav-cache-system">
+                            <a href="<?= adminUrl('cache-system'); ?>"><i class="fa fa-database"></i><span><?= trans("cache_system"); ?></span></a>
+                        </li>
+                        <!--                        <li class="nav-google-news">-->
+                        <!--                            <a href="--><?php //= adminUrl('google-news'); ?><!--"><i class="fa fa-newspaper-o"></i><span>--><?php //= trans("google_news"); ?><!--</span></a>-->
+                        <!--                        </li>-->
                     <?php endif;
                     if ($generalSettings->reward_system_status == 1 && user()->reward_system_enabled == 1): ?>
                         <li class="nav-author-earnings"><a href="<?= adminUrl('author-earnings'); ?>"><i class="fa fa-money" aria-hidden="true"></i><span><?= trans("my_earnings"); ?></span></a></li>
