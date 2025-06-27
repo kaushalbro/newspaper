@@ -97,10 +97,10 @@
                         <?= formRadio('visibility', 1, 0, trans("show"), trans("hide"), '1', 'col-md-2'); ?>
                     </div>
 
-                    <div class="form-group">
-                        <label><?= trans("show_only_registered"); ?></label>
-                        <?= formRadio('need_auth', 1, 0, trans("yes"), trans("no"), '0', 'col-md-2'); ?>
-                    </div>
+<!--                    <div class="form-group">-->
+<!--                        <label>--><?php //= trans("show_only_registered"); ?><!--</label>-->
+<!--                        --><?php //= formRadio('need_auth', 1, 0, trans("yes"), trans("no"), '0', 'col-md-2'); ?>
+<!--                    </div>-->
 
                     <div class="form-group">
                         <label><?= trans("show_title"); ?></label>

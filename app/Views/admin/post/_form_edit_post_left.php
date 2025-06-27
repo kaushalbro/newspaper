@@ -88,9 +88,9 @@
             <input type="hidden" name="is_recommended" value="<?= $isPostRecommended; ?>">
         <?php endif; ?>
 
-        <div class="form-group">
-            <?= formCheckbox('need_auth', 1, trans("show_only_registered"), $post->need_auth); ?>
-        </div>
+<!--        <div class="form-group">-->
+<!--            --><?php //= formCheckbox('need_auth', 1, trans("show_only_registered"), $post->need_auth); ?>
+<!--        </div>-->
 
         <?php if ($post->post_type == 'sorted_list' || $post->post_type == 'gallery'): ?>
             <div class="form-group">
