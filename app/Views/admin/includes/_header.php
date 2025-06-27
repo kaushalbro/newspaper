@@ -120,53 +120,31 @@
                             <a href="<?= adminUrl('navigation?lang=' . $activeLang->id); ?>"><i class="fa fa-th"></i><span><?= trans("navigation"); ?></span></a>
                         </li>
                     <?php endif;
-                    if (isSuperAdmin()): ?>
-                        <li class="nav-themes">
-                            <a href="<?= adminUrl('themes'); ?>"><i class="fa fa-leaf"></i><span><?= trans("themes"); ?></span></a>
-                        </li>
-                    <?php endif;
-                    if (hasPermission('pages')): ?>
-                        <li class="nav-pages">
-                            <a href="<?= adminUrl('pages'); ?>"><i class="fa fa-file-text"></i><span><?= trans("pages"); ?></span></a>
-                        </li>
-                    <?php endif;
-                    if (hasPermission('add_post')): ?>
-                        <li class="nav-post-format nav-add-post">
-                            <a href="<?= adminUrl('post-format'); ?>"><i class="fa fa-file"></i><span><?= trans("add_post"); ?></span></a>
-                        </li>
-                        <?php if (isSuperAdmin() || $generalSettings->bulk_post_upload_for_authors == 1): ?>
-                            <li class="nav-import-posts">
-                                <a href="<?= adminUrl('bulk-post-upload'); ?>"><i class="fa fa-cloud-upload"></i><span><?= trans("bulk_post_upload"); ?></span></a>
+                        if (hasPermission('add_post')): ?>
+                            <li class="nav-post-format nav-add-post">
+                                <a href="<?= adminUrl('post-format'); ?>"><i class="fa fa-file"></i><span><?= trans("add_post"); ?></span></a>
                             </li>
-                        <?php endif; ?>
-                        <li class="treeview<?php isAdminNavActive(['posts', 'slider-posts', 'featured-posts', 'breaking-news', 'recommended-posts', 'pending-posts', 'scheduled-posts', 'drafts', 'update-post']); ?>">
-                            <a href="#"><i class="fa fa-bars"></i> <span><?= trans("posts"); ?></span><span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
-                            <ul class="treeview-menu">
-                                <li class="nav-posts"><a href="<?= adminUrl('posts'); ?>"><?= trans("posts"); ?></a></li>
-                                <?php if (hasPermission('manage_all_posts')): ?>
-                                    <li class="nav-slider-posts"><a href="<?= adminUrl('slider-posts'); ?>"><?= trans("slider_posts"); ?></a></li>
-                                    <li class="nav-featured-posts"><a href="<?= adminUrl('featured-posts'); ?>"><?= trans("featured_posts"); ?></a></li>
-                                    <li class="nav-breaking-news"><a href="<?= adminUrl('breaking-news'); ?>"><?= trans("breaking_news"); ?></a></li>
-                                    <li class="nav-recommended-posts"><a href="<?= adminUrl('recommended-posts'); ?>"><?= trans("recommended_posts"); ?></a></li>
-                                <?php endif; ?>
-                                <li class="nav-pending-posts"><a href="<?= adminUrl('pending-posts'); ?>"><?= trans("pending_posts"); ?></a></li>
-                                <li class="nav-scheduled-posts"><a href="<?= adminUrl('scheduled-posts'); ?>"><?= trans("scheduled_posts"); ?></a></li>
-                                <li class="nav-drafts"><a href="<?= adminUrl('drafts'); ?>"><?= trans("drafts"); ?></a></li>
-                            </ul>
-                        </li>
-                    <?php endif;
-                    if (hasPermission('rss_feeds')): ?>
-                        <li class="nav-feeds"><a href="<?= adminUrl('feeds'); ?>"><i class="fa fa-rss" aria-hidden="true"></i><span><?= trans("rss_feeds"); ?></span></a></li>
-                    <?php endif;
-                    if (hasPermission('categories')): ?>
-                        <li class="nav-categories"><a href="<?= adminUrl('categories'); ?>"><i class="fa fa-folder-open" aria-hidden="true"></i><span><?= trans("categories"); ?></span></a></li>
-                    <?php endif;
-                    if (hasPermission('widgets')): ?>
-                        <li class="nav-widgets"><a href="<?= adminUrl('widgets'); ?>"><i class="fa fa-th" aria-hidden="true"></i><span><?= trans("widgets"); ?></span></a></li>
-                    <?php endif;
-                    if (hasPermission('polls')): ?>
-                        <li class="nav-polls"><a href="<?= adminUrl('polls'); ?>"><i class="fa fa-list" aria-hidden="true"></i><span><?= trans("polls"); ?></span></a></li>
-                    <?php endif;
+                            <li class="treeview<?php isAdminNavActive(['posts', 'slider-posts', 'featured-posts', 'breaking-news', 'recommended-posts', 'pending-posts', 'scheduled-posts', 'drafts', 'update-post']); ?>">
+                                <a href="#"><i class="fa fa-bars"></i> <span><?= trans("posts"); ?></span><span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+                                <ul class="treeview-menu">
+                                    <li class="nav-posts"><a href="<?= adminUrl('posts'); ?>"><?= trans("posts"); ?></a></li>
+                                    <?php if (hasPermission('manage_all_posts')): ?>
+                                        <li class="nav-slider-posts"><a href="<?= adminUrl('slider-posts'); ?>"><?= trans("slider_posts"); ?></a></li>
+                                        <li class="nav-featured-posts"><a href="<?= adminUrl('featured-posts'); ?>"><?= trans("featured_posts"); ?></a></li>
+                                        <li class="nav-breaking-news"><a href="<?= adminUrl('breaking-news'); ?>"><?= trans("breaking_news"); ?></a></li>
+                                        <li class="nav-recommended-posts"><a href="<?= adminUrl('recommended-posts'); ?>"><?= trans("recommended_posts"); ?></a></li>
+                                    <?php endif; ?>
+                                    <li class="nav-pending-posts"><a href="<?= adminUrl('pending-posts'); ?>"><?= trans("pending_posts"); ?></a></li>
+                                    <li class="nav-scheduled-posts"><a href="<?= adminUrl('scheduled-posts'); ?>"><?= trans("scheduled_posts"); ?></a></li>
+                                    <li class="nav-drafts"><a href="<?= adminUrl('drafts'); ?>"><?= trans("drafts"); ?></a></li>
+                                </ul>
+                            </li>
+                            <?php if (isSuperAdmin() || $generalSettings->bulk_post_upload_for_authors == 1): ?>
+                                <li class="nav-import-posts">
+                                    <a href="<?= adminUrl('bulk-post-upload'); ?>"><i class="fa fa-cloud-upload"></i><span><?= trans("bulk_post_upload"); ?></span></a>
+                                </li>
+                            <?php endif; ?>
+                        <?php endif;
                     if (hasPermission('gallery')): ?>
                         <li class="treeview<?php isAdminNavActive(['gallery-images', 'gallery-albums', 'gallery-categories', 'update-gallery-image', 'update-gallery-album', 'update-gallery-category', 'gallery-add-image']); ?>">
                             <a href="#"><i class="fa fa-image"></i> <span><?= trans("gallery"); ?></span><span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
@@ -177,6 +155,37 @@
                             </ul>
                         </li>
                     <?php endif;
+                    if (hasPermission('categories')): ?>
+                        <li class="nav-categories"><a href="<?= adminUrl('categories'); ?>"><i class="fa fa-folder-open" aria-hidden="true"></i><span><?= trans("categories"); ?></span></a></li>
+                    <?php endif;
+                    if (hasPermission('pages')): ?>
+                        <li class="nav-pages">
+                            <a href="<?= adminUrl('pages'); ?>"><i class="fa fa-file-text"></i><span><?= trans("pages"); ?></span></a>
+                        </li>
+                    <?php endif;
+                    if (hasPermission('ad_spaces')): ?>
+                        <li class="nav-ad-spaces">
+                            <a href="<?= adminUrl('ad-spaces'); ?>"><i class="fa fa-dollar" aria-hidden="true"></i><span><?= trans("ad_spaces"); ?></span></a>
+                        </li>
+                    <?php endif;
+                    if (isSuperAdmin()): ?>
+                        <li class="nav-themes">
+                            <a href="<?= adminUrl('themes'); ?>"><i class="fa fa-leaf"></i><span><?= trans("themes"); ?></span></a>
+                        </li>
+                    <?php endif;
+
+
+                    if (hasPermission('rss_feeds')): ?>
+                        <li class="nav-feeds"><a href="<?= adminUrl('feeds'); ?>"><i class="fa fa-rss" aria-hidden="true"></i><span><?= trans("rss_feeds"); ?></span></a></li>
+                    <?php endif;
+
+                    if (hasPermission('widgets')): ?>
+                        <li class="nav-widgets"><a href="<?= adminUrl('widgets'); ?>"><i class="fa fa-th" aria-hidden="true"></i><span><?= trans("widgets"); ?></span></a></li>
+                    <?php endif;
+                    if (hasPermission('polls')): ?>
+                        <li class="nav-polls"><a href="<?= adminUrl('polls'); ?>"><i class="fa fa-list" aria-hidden="true"></i><span><?= trans("polls"); ?></span></a></li>
+                    <?php endif;
+
                     if (hasPermission('comments_contact')): ?>
                         <li class="nav-contact-messages">
                             <a href="<?= adminUrl('contact-messages'); ?>"><i class="fa fa-paper-plane" aria-hidden="true"></i><span><?= trans("contact_messages"); ?></span></a>
@@ -205,11 +214,7 @@
                             </ul>
                         </li>
                     <?php endif;
-                    if (hasPermission('ad_spaces')): ?>
-                        <li class="nav-ad-spaces">
-                            <a href="<?= adminUrl('ad-spaces'); ?>"><i class="fa fa-dollar" aria-hidden="true"></i><span><?= trans("ad_spaces"); ?></span></a>
-                        </li>
-                    <?php endif;
+
                     if (hasPermission('users')): ?>
                         <li class="nav-users">
                             <a href="<?= adminUrl('users'); ?>"><i class="fa fa-users" aria-hidden="true"></i><span><?= trans("users"); ?></span></a>
