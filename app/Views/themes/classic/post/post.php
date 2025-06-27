@@ -31,7 +31,7 @@
                     </p>
                     <h1 class="title"><?= esc($post->title); ?></h1>
                     <?php if (!empty($post->summary) && empty($post->feed_id)): ?>
-                        <div class="post-summary">
+                        <div class="post-summary" style="display: none">
                             <h2>
                                 <?= esc($post->summary); ?>
                             </h2>
